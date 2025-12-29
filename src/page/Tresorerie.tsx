@@ -104,15 +104,15 @@ async function tresor(){
    
     
     <div className="flex justify-center">
-        <div className="absolute top-135 pb-35 ">
+        <div className="absolute top-135 pb-15 ">
             <div className="m-2 flex justify-center">
                   <button className="border border-black-500 mb-2 p-2 rounded-lg bg-blue-100" onClick={(handleView)}>Voir les details</button>    
             </div>
-         <div className="absolute top-50 pb-30 w-full flex justify-center">
+         <div className="absolute top-50 left-10 pb-30 w-full flex justify-center">
             <ul>
              <li>
                 {info.map((inf)=>(
-                    <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg m-10 left-2' key={inf.id}>
+                    <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg ' key={inf.id}>
                         <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
                         <p>PRIX : {inf.prix}</p>
                         <p>DATE : {inf.date}</p>

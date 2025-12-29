@@ -154,7 +154,7 @@ async function handleEdit(commandes:Todo,e){
     }
      
     <div className="flex justify-center">
-        <div className="absolute top-130 pb-30 flex items-center gap-3">
+        <div className="absolute top-130 pb-50 flex items-center gap-3">
             <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer shadow-lg" onClick={AllCommande}>voir toutes les commandes</button>
 
         </div>

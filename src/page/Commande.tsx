@@ -136,7 +136,7 @@ async function handleEdit(commandes:Todo,e){
      </div>
      {update&&
      <div className="flex justify-center ">
-      <div className="absolute top-110 z-1 bg-white p-5 w-1/2 flex justify-center border border-black rounded-lg m-2">
+      <div className="absolute top-110 z-1 bg-white p-5 w-1/2 flex flex-wrap justify-center border border-black rounded-lg m-2">
         <form>
             <p className="font-bold absolute right-2 top-0 w-2" onClick={()=>setUpdate(null)}>X</p>
             <input  className="mt-1 block p-1 border-b border-blue " type="text" value={update.nom} onChange={(e)=>setUpdate({...update,nom:e.target.value})}/>

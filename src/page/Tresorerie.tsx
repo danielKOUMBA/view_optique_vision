@@ -109,22 +109,21 @@ async function tresor(){
                   <button className="border border-black-500 mb-2 p-2 rounded-lg bg-blue-100" onClick={(handleView)}>Voir les details</button>    
             </div>
          <div className="absolute top-50 pb-30 w-full flex justify-center m-2">
-            <ul>
-             <li>
+           
                 {info.map((inf)=>(
-                    <div className='p-2 m-5 border border-black rounded-lg flex justify-between items-center gap-3' key={inf.id}>
-                        <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
-                        <p>PRIX : {inf.prix}</p>
-                        <p>DATE : {inf.date}</p>
-                        <p>Reste a payer : {inf.reste_a_payer}</p>
-                        <p>type : {inf.type} {inf.type=='entree'?(<FaPlus color="white" className="bg-green-500 rounded-full p-1"/>):(<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
-                        <p>Solde initial:{inf.si}</p>
-                        <p>Solde final:{inf.sf}</p>
+                    <div className='p-2 m-5 border border-black rounded-lg flex flex-wrap justify-between items-center gap-2' key={inf.id}>
+                        <p className="flex-1 min-w-[120px]">{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
+                        <p className="flex-1 min-w-[120px]">PRIX : {inf.prix}</p>
+                        <p className="flex-1 min-w-[120px]">DATE : {inf.date}</p>
+                        <p className="flex-1 min-w-[120px]">Reste a payer : {inf.reste_a_payer}</p>
+                        <p className="flex-1 min-w-[120px] bg-green-500 rounded-full p-1">type : {inf.type} {inf.type=='entree'?(<FaPlus color="white"/>):
+                        (<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
+                        <p className="flex-1 min-w-[120px]">Solde initial:{inf.si}</p>
+                        <p className="flex-1 min-w-[120px]">Solde final:{inf.sf}</p>
                     </div>
                     
                 ))}
-              </li>
-              </ul>
+              
           </div>
         </div>
     </div>

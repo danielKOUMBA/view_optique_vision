@@ -110,7 +110,7 @@ async function tresor(){
             </div>
              
               {info.map((inf)=>(
-                <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg m-2' key={inf.id}>
+                <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg m-10' key={inf.id}>
                     <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
                     <p>PRIX : {inf.prix}</p>
                     <p>DATE : {inf.date}</p>

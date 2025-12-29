@@ -76,7 +76,13 @@ export default function Cout(){
         <div className="absolute top-1/4 mx-3 border border-black rounded-lg p-5">
                 <form onSubmit={handleSubmit}>
                     <h1 className="mb-4 font-bold">Enregistrez une recente depense</h1>
-                        <input type="text" placeholder="type de la depense..." className="mt-1 block p-1 border-b border-black " value={depense} onChange={(e)=>setDepense(e.target.value)} required/>
+                         <select value={depense} onChange={(e)=>setDepense(e.target.value)} required>
+                            <option value="Conception">Conception</option>
+                            <option value="Salaire">Salaire</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Transport et Livraison">Transport et Livraison</option>
+                            <option value="Autres">Autres</option>
+                         </select>
                         <input type="date" placeholder="date du jour..." className="mt-1 block p-1 border-b border-black " value={date}  onChange={(e)=>setDate(e.target.value)} required />
                         <input type="number" placeholder="somme de la depense..." className="mt-1 block p-1 border-b border-black " value={somme}  onChange={(e)=>setSomme(e.target.value)} required/>
                         <button type="submit" className="mt-2 border border-blue-900 bg-blue-100 text-black rounded-lg p-1 cursor-pointer">enregistrer</button>
@@ -99,7 +105,7 @@ export default function Cout(){
         {error}
         </div>}
 
-            <div className="absolute top-150 pb-20 w-full flex justify-center">
+            <div className="absolute top-150 pb-30 w-full flex justify-center">
                 <ul>
                     <li>
                         {allcout.map((cout)=>(
@@ -109,7 +115,7 @@ export default function Cout(){
                                 <p className="font-bold ">Somme : {cout.prix}fcfa</p>
                                 <p className="font-bold">Date : {cout.date}</p>
                                 <button onClick={()=>OnDelete(cout)}>
-                                    <TrashIcon className="w-6"/>
+                                    <TrashIcon className="w-5" color="red"/>
                                 </button>
                             </div>
                         ))}

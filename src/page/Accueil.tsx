@@ -25,7 +25,7 @@ const OldImage=()=>{
   return(
    <>
    <Header/>
-    <div className="relative w-full pt-13 pb-13 overflow-y-auto">
+    <div className="relative w-full pt-13 pb-20 overflow-y-auto">
         <img src={image[index]} alt="image" className="w-full object-cover"/>
         
           <button className="absolute left-0 top-1/3 -translate-y-1/2 bg-white/70 p-2 rounded-full" onClick={nextImage}>

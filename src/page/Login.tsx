@@ -3,6 +3,7 @@ import logos from '../assets/logos.JPG'
 import { apiFetch } from "../api/api"
 import setToken from "../api/api"
 import { Link, useNavigate } from "react-router-dom"
+import Footer from "../Components/footer"
 
 
 export default function Login(){
@@ -35,27 +36,30 @@ export default function Login(){
     }
     return(<>
    <div className="flex items-center justify-center gap-2">
-     <h2 className="font-bold">the view optique vision</h2>
-     <img src={logos} alt="logos" className="w-20 rounded-full" />
+     <img src={logos} alt="logos" className="w-full " />
+   </div>
+   <div className="flex justify-center font-bold">
+         < p className="color-black ">Connexion</p>
    </div>
    {error && <div className="bg-red-500 text-center p-2 w-1/2 flex justify-center mx-auto rounded-lg">
       {error}
     </div>}
-    <div className="flex justify-center items-center p-4 ">
+    <div className="flex justify-center items-center p-4 pb-40">
         <form onSubmit={handleSubmit} className=" rounded-lg p-2">
             <input type="email" 
-            placeholder="email" 
+            placeholder="Email" 
             value={email}
-            className="mt-1 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none"
+            className="mt-1 mb-5 block w-full border border-gray-700 rounded-lg px-3 py-2  focus:outline-none bg-black text-white"
              required onChange={(e)=>setEmail(e.target.value)}/>
             <input type="password" 
             placeholder="mot de passe" 
             value={password}
-            className="mt-1 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none" 
+            className="mt-1 mb-5 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none  bg-black text-white" 
             required onChange={(e)=>setPassword(e.target.value)}/>
-            <button type="submit" className="mt-1 block bg-blue-200 rounded-lg border-b border-t border-l border-r border-blue-500 p-2 cursor-pointer" >se connecter</button>
+            <button type="submit" className="mt-1 block bg-black text-white rounded-lg border-b  p-2 cursor-pointer" >se connecter</button>
             <Link to='/register' className="text-blue-bold hover:underline">modifier mon mot de passe?</Link>
         </form>
     </div>
+    <Footer/>
     </>)
 }

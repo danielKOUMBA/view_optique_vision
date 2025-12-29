@@ -108,20 +108,24 @@ async function tresor(){
             <div className="m-2 flex justify-center">
                   <button className="border border-black-500 mb-2 p-2 rounded-lg bg-blue-100" onClick={(handleView)}>Voir les details</button>    
             </div>
-             
-              {info.map((inf)=>(
-                <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg m-10' key={inf.id}>
-                    <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
-                    <p>PRIX : {inf.prix}</p>
-                    <p>DATE : {inf.date}</p>
-                    <p>Reste a payer : {inf.reste_a_payer}</p>
-                    <p>type : {inf.type} {inf.type=='entree'?(<FaPlus color="white" className="bg-green-500 rounded-full p-1"/>):(<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
-                    <p>Solde initial:{inf.si}</p>
-                    <p>Solde final:{inf.sf}</p>
-                </div>
-                
-              ))}
-              
+            <ul>
+
+            
+             <li>
+                {info.map((inf)=>(
+                    <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg m-10 left-2' key={inf.id}>
+                        <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
+                        <p>PRIX : {inf.prix}</p>
+                        <p>DATE : {inf.date}</p>
+                        <p>Reste a payer : {inf.reste_a_payer}</p>
+                        <p>type : {inf.type} {inf.type=='entree'?(<FaPlus color="white" className="bg-green-500 rounded-full p-1"/>):(<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
+                        <p>Solde initial:{inf.si}</p>
+                        <p>Solde final:{inf.sf}</p>
+                    </div>
+                    
+                ))}
+              </li>
+              </ul>
         </div>
     </div>
         

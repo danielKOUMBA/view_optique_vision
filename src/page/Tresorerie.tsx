@@ -108,7 +108,7 @@ async function tresor(){
             <div className="m-2 flex justify-center">
                   <button className="border border-black-500 mb-2 p-2 rounded-lg bg-blue-100" onClick={(handleView)}>Voir les details</button>    
             </div>
-         <div className="absolute top-50 left-20 pb-30 w-full flex justify-center">
+         <div className="absolute top-50 left-40 pb-30 w-full flex justify-center">
             <ul>
              <li>
                 {info.map((inf)=>(

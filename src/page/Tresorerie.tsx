@@ -112,14 +112,14 @@ async function tresor(){
             <ul>
              <li>
                 {info.map((inf)=>(
-                    <div className='flex justify-between gap-2 p-2 border border-black-500 rounded-lg ' key={inf.id}>
-                        <p>{noms.includes(inf.nom)? ("Nature de l'operation"):('Nom') }: {inf.nom}</p>
-                        <p>PRIX : {inf.prix} fcfa</p>
-                        <p>DATE : {inf.date}</p>
-                        <p>Reste a payer : {inf.reste_a_payer}</p>
-                        <p>type : {inf.type} {inf.type=='entree'?(<FaPlus color="white" className="bg-green-500 rounded-full p-1"/>):(<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
-                        <p>Solde initial:{inf.si} fcfa</p>
-                        <p>Solde final:{inf.sf} fcfa</p>
+                    <div className='flex justify-between gap-5 p-2 border border-black-500 rounded-lg mb-3' key={inf.id}>
+                        <p>{noms.includes(inf.nom)? <span className="font-bold">Nature de l'operation</span>: <span className="font-bold">Nom</span> }: {inf.nom}</p>
+                        <p> <span className="font-bold ">PRIX :</span> {inf.prix} fcfa</p>
+                        <p> <span className="font-bold">DATE :</span> {inf.date}</p>
+                        <p><span className="font-bold">Reste a payer :</span> {inf.reste_a_payer}</p>
+                        <p><span className="font-bold">type :</span> {inf.type} {inf.type=='entree'?(<FaPlus color="white" className="bg-green-500 rounded-full p-1"/>):(<FaMinus color="white" className="bg-red-500 rounded-full p-1"/>)}</p>
+                        <p><span className="font-bold">Solde initial:</span> {inf.si} fcfa</p>
+                        <p><span className="font-bold"> Solde final:</span>{inf.sf} fcfa</p>
                     </div>
                     
                 ))}

@@ -120,6 +120,7 @@ async function handleEdit(commandes:Todo,e){
                     <input type="number" placeholder="numero du client..."  className="mt-1 block p-1 border-b border-black " onChange={(e)=>setNumero(e.target.value)} required/>
                     <input type="text" placeholder="produits commander..."  className="mt-1 block p-1 border-b border-black "  onChange={(e)=>setProduit(e.target.value)} required/>
                     <select value={type} onChange={(e)=>setType(e.target.value)} required>
+                        <option value="" disabled selected>Choisir un type de paire</option>
                         <option value="Optique">Optique</option>
                         <option value="Progressive">Progressive</option>
                         <option value="Photochromique">Photochromique</option>

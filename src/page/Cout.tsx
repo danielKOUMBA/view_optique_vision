@@ -76,7 +76,9 @@ export default function Cout(){
         <div className="absolute top-1/4 mx-3 border border-black rounded-lg p-5">
                 <form onSubmit={handleSubmit}>
                     <h1 className="mb-4 font-bold">Enregistrez une recente depense</h1>
-                         <select value={depense} onChange={(e)=>setDepense(e.target.value)} required>
+                           
+                            <select value={depense} onChange={(e)=>setDepense(e.target.value)} required>
+                            <option value="" disabled selected>Choisir un type cout</option>
                             <option value="Conception">Conception</option>
                             <option value="Salaire">Salaire</option>
                             <option value="Marketing">Marketing</option>

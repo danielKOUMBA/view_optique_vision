@@ -83,6 +83,7 @@ export default function Chiffres(){
         setLoader2(false)
     }
     const handleSubmit3= async (e) => {
+        setLoader3(true)
         e.preventDefault()
         try{
             const res= await apiFetch('/api/tresor_trie',{
@@ -96,15 +97,16 @@ export default function Chiffres(){
         }catch(err){
             console.log(err)
         }
+        setLoader3(false)
     }
     return(
     <>
         <Header/>
         <div className="flex justify-center items-center ">
-            <div className="absolute top-16">
+            <div className="absolute top-16 m-2">
                 <p className="text-grey-500/80">statistique sur une periode (commandes)</p>
             </div>
-            <div  className="absolute top-30" >
+            <div  className="absolute top-30 m-2" >
                 <form onSubmit={handleSubmit}>
                     <label>
                           <p>Date de debut</p>
@@ -148,7 +150,7 @@ export default function Chiffres(){
             </div> 
         </div>
          <div className="flex justify-center items-center">
-            <div className="absolute top-4/5 pb-30">
+            <div className="absolute top-6/7 pb-30 m-2">
                 <p>statistique sur une periode donnee (depense)</p>
                 <div>
                 <form onSubmit={handleSubmit2}>
@@ -197,7 +199,7 @@ export default function Chiffres(){
         </div>
 
         <div className="flex justify-center items-center">
-            <div className="absolute top-6/4  pb-30">
+            <div className="absolute top-7/4  pb-30 m-2">
                   <p>Benefice de l'entreprise entre deux periode<FaDollarSign size={20}/></p>
                   
                 <form onSubmit={handleSubmit3}>

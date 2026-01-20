@@ -7,6 +7,7 @@ import Accueil_protected from "./Accueil_protected";
 import Modifier_password from "../page/modifier_password";
 import Commandes from "../page/Commande";
 import Cout from "../page/Cout";
+import Chiffres from "../page/chiffre";
 
 
 export default function AppRoute() {
@@ -22,7 +23,7 @@ export default function AppRoute() {
                 <Route path="/tresor" element={<Tresorerie/>}/>
                 <Route path="/commandes" element={<Commandes/>}/>
                 <Route path="/cout" element={<Cout/>}/>
-               
+                <Route path='/chiffre' element={<Chiffres/>}/>
             </Route>
         </Routes>
             

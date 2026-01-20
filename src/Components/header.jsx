@@ -49,6 +49,9 @@ export default function Header(){
                 <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
                   <Link to='/cout'>Gestions des couts</Link>
                 </li>
+                <li className=" w-full hover:bg-blue-100 p-3 cursor-pointer border-b border-blue-400 ">
+                  <Link to='/chiffre'>Affichage du chiffre d'affaire</Link>
+                </li>
               </ul>
             </div>
       

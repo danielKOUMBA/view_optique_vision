@@ -10,10 +10,12 @@ export default function Login(){
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[error,setError]=useState('')
+    const [loader,setloader]=useState<boolean>(false)
     const navigate=useNavigate()
    
     
   async function handleSubmit(e){
+    setloader(true)
             e.preventDefault()
             try{
                 const data = await apiFetch('/api/login',{
@@ -32,7 +34,7 @@ export default function Login(){
             }catch(err){
                 console.log('erreur fetch:',err)
             }
-       
+       setloader(false)
     }
     return(<>
    <div className="flex items-center justify-center gap-2">
@@ -56,7 +58,7 @@ export default function Login(){
             value={password}
             className="mt-1 mb-5 block w-full border border-gray-700 rounded-md px-3 py-2  focus:outline-none  bg-black text-white" 
             required onChange={(e)=>setPassword(e.target.value)}/>
-            <button type="submit" className="mt-1 block bg-black text-white rounded-lg border-b  p-2 cursor-pointer" >se connecter</button>
+            <button type="submit" className="mt-1 block bg-black text-white rounded-lg border-b  p-2 cursor-pointer" >{loader? 'connexion...':'se connecter'}</button>
             <Link to='/register' className="text-blue-bold hover:underline">modifier mon mot de passe?</Link>
         </form>
     </div>

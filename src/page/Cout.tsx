@@ -15,6 +15,7 @@ type Cout={
 export default function Cout(){
       const[depense,setDepense]=useState('')
       const[date,setDate]=useState('')
+      const [loader,setloader]=useState<boolean>(false)
       const[somme,setSomme]=useState('')
       const[res,setRes]=useState('')
       const [error,setError]=useState('')
@@ -43,6 +44,7 @@ export default function Cout(){
     }
 
     async function allCout(){
+        setloader(true)
         try{
             const data=await apiFetch('/api/allCout',{
                 method:'POST'
@@ -56,6 +58,7 @@ export default function Cout(){
         }catch(err){
             console.log(err)
         }
+        setloader(false)
     }
 
     async function OnDelete(cout:Cout){
@@ -96,7 +99,7 @@ export default function Cout(){
          <div className="flex justify-center">
             <div className="absolute top-120 flex gap-3">
                     <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer" onClick={allCout}><p>
-                    Voir toutes les depenses
+                    {loader? 'chargement...':'voir toutes les depenses'} 
                             </p>
                         </button>
                   

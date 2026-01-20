@@ -25,6 +25,7 @@ export default function Commandes(){
     const[numero,setNumero]=useState('')
     const[produit,setProduit]=useState('')
     const[date,setDate]=useState('')
+    const [loader,setloader]=useState<boolean>(false)
    
     const[type,setType]=useState('')
     const[prix_avancer,setPrix_avancer]=useState('')
@@ -58,6 +59,7 @@ async function handleSubmit(e){
 }
 
 async function AllCommande(){
+    setloader(true)
     try{
         const data=await apiFetch('/api/allCommande',{
             method:'POST'
@@ -73,6 +75,7 @@ async function AllCommande(){
     }catch(err){
         console.log(err)
     }
+    setloader(false)
 }
 
 async function OnDelete(commande:Todo){
@@ -171,7 +174,7 @@ async function handleEdit(commandes:Todo,e){
      
     <div className="flex justify-center">
         <div className="absolute top-130 pb-50 flex items-center gap-3">
-            <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer shadow-lg" onClick={AllCommande}>voir toutes les commandes</button>
+            <button className="border border-blue-900 bg-blue-100 p-2 rounded-lg cursor-pointer shadow-lg" onClick={AllCommande}>{loader? 'chargement...':'voir toutes les commandes'}</button>
 
         </div>
     </div>
